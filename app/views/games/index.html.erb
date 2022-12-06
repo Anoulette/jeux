@@ -1,0 +1,12 @@
+<h2>Liste de tous les jeux</h2>
+<%# je veux afficher tous les jeux %>
+<%# quand je clique sur un jeu, ça me renvoie vers la page/show du jeu %>
+
+<% @games.each do |game| %>
+  <div><%= link_to game.title, game_path(game) %></div>
+  <div><%= game.price_per_day %> €</div>
+<% end %>
+
+<% if user_signed_in? %>
+  <%= link_to "Créer un nouveau jeu", new_game_path %>
+<% end %>
