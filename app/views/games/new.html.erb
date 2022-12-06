@@ -1,0 +1,20 @@
+<h2>Créer un nouveau jeu</h2>
+<ul>
+  <%= form_with model: @game do |form| %>
+    <li><%= form.label :title %></li>
+    <li><%= form.text_field :title %></li>
+    <li><%= form.label :description %></li>
+    <li><%= form.text_field :description %></li>
+    <li><%= form.label :price_per_day %></li>
+    <li><%= form.text_field :price_per_day %></li>
+    <li><%= form.label :street_number %></li>
+    <li><%= form.text_field :street_number %></li>
+    <li><%= form.label :street %></li>
+    <li><%= form.text_field :street %></li>
+    <li><%= form.label :zip_code %></li>
+    <li><%= form.text_field :zip_code %></li>
+    <li><%= form.label :city %></li>
+    <li><%= form.text_field :city %></li>
+    <li><%= form.submit %>
+  <% end %>
+</ul>
