@@ -10,3 +10,12 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+ul {
+  list-style-type: none;
+}
+
+// pour supprimer les lignes sous les liens link_to
+a {
+  text-decoration: none;
+}

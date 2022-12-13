@@ -1,8 +1,14 @@
 <h2><%= @game.title %></h2>
 
-<div><%= @game.description %></div>
-<div><%= @game.price_per_day %>€</div>
+<ul>
+  <li><%= @game.description %></li>
+  <li><%= @game.price_per_day %>€</li>
+</ul>
 
 <%= link_to "Retourner sur la liste de tous les jeux", games_path %>
-<%= link_to "Actualiser ce jeu", edit_game_path(@game) %>
-<%= link_to "Supprimer ce jeu", game_path(@game), data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr(e)?"} %>
+
+<% if user_signed_in? %>
+  <%= link_to "Réserver ce jeu", new_game_booking_path(@game) %>
+  <%= link_to "Actualiser ce jeu", edit_game_path(@game) %>
+  <%= link_to "Supprimer ce jeu", game_path(@game), data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr(e)?"} %>
+<% end %>
