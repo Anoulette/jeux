@@ -8,6 +8,7 @@
 
 User.destroy_all
 Game.destroy_all
+Booking.destroy_all
 
 u1 = User.create!(name: "Michel", email: "michel@michel.com", password: "azerty")
 u2 = User.create!(name: "Julie", email: "julie@julie.com", password: "azerty")

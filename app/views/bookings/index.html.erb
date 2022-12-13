@@ -1,0 +1,12 @@
+<h2>Mes réservations de jeu(x)</h2>
+<%# afficher tous les jeux réservés %>
+<% @bookings.each do |booking| %>
+  <ul>
+    <li><%= booking.game.title %></li>
+    <li><%= booking.game.price_per_day %>€</li>
+    <li><%= booking.date %></li>
+    <li><%= link_to "Retourner sur la liste de tous les jeux", games_path %></li>
+    <%# <li><%= link_to "Actualiser cette réservation", edit_game_booking_path(@game) </li>%>
+    <li><%= link_to "Supprimer cette réservation", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr(e)?"} %></li>
+  </ul>
+<% end %>

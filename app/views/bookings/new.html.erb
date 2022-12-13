@@ -1,0 +1,9 @@
+<h2>Quelle date voulez-vous réserver pour ce jeu "<%= @game.title %>" ?</h2>
+
+<ul>
+  <%= form_with model: [@game, @booking] do |form| %>
+    <li><%= form.label :date %></li>
+    <li><%= form.text_field :date %></li>
+    <li><%= form.submit %></li>
+  <% end %>
+</ul>

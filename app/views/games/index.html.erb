@@ -3,8 +3,10 @@
 <%# quand je clique sur un jeu, ça me renvoie vers la page/show du jeu %>
 
 <% @games.each do |game| %>
-  <div><%= link_to game.title, game_path(game) %></div>
-  <div><%= game.price_per_day %> €</div>
+  <ul>
+    <li><%= link_to game.title, game_path(game) %></li>
+    <li><%= game.price_per_day %> €</li>
+  </ul>
 <% end %>
 
 <% if user_signed_in? %>
