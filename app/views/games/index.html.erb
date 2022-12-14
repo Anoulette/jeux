@@ -2,13 +2,17 @@
 <%# je veux afficher tous les jeux %>
 <%# quand je clique sur un jeu, ça me renvoie vers la page/show du jeu %>
 
-<% @games.each do |game| %>
-  <ul>
-    <li><%= link_to game.title, game_path(game) %></li>
-    <li><%= game.price_per_day %> €</li>
-  </ul>
-<% end %>
+<div class="card text-bg-light mb-3" style="max-width: 18rem;">
+    <% @games.each do |game| %>
+      <div class="card-header"><%= game.price_per_day %> €</div>
+      <div class="card-body">
+        <h5 class="card-title"><%= game.title %></h5>
+        <p class="card-text"><%= game.description %></p>
+        <div class="card"><%= link_to "owl.jpg", game_path(game), class: "btn" %></div>
+      </div>
+    <% end %>
+</div>
 
 <% if user_signed_in? %>
-  <%= link_to "Créer un nouveau jeu", new_game_path %>
+  <%= link_to "Créer un nouveau jeu", new_game_path, class: "btn btn-primary" %>
 <% end %>
