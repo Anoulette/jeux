@@ -25,6 +25,7 @@ class GamesController < ApplicationController
   #  pour tous : afficher 1 jeu
   def show
     @game = Game.find(params[:id])
+    @booking = Booking.new
   end
 
   # seul le owner du jeu peut demander le formulaire de modif
