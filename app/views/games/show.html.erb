@@ -1,18 +1,23 @@
-<h2><%= @game.title %></h2>
-
-<ul>
-  <li><%= @game.description %></li>
-  <li><%= @game.price_per_day %>€</li>
-</ul>
-
-<%= link_to "Retourner sur la liste de tous les jeux", games_path, class: "btn btn-primary"%>
-
-<div class="d-flex">
-  <% if user_signed_in? %>
-    <ul>
-      <li><%= link_to "Réserver ce jeu", new_game_booking_path(@game), class: "btn btn-success" %></li>
-      <li><%= link_to "Actualiser ce jeu", edit_game_path(@game), class: "btn btn-link" %></li>
-      <li><%= link_to "Supprimer ce jeu", game_path(@game), data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr(e)?"}, class: "btn btn-danger" %></li>
-    </ul>
-  <% end %>
+<div class="card mb-3" >
+  <div class="row g-0">
+    <div class="card-body">
+      <div class="d-flex">
+        <div class="card w-50"><%= image_tag "jeux-societe.png"%></div>
+          <div class="ms-5 mt-5">
+            <h3 class="card-text"><%= @game.title %></h3>
+            <p class="card-text"><%= @game.description %></p>
+            <p class="card-text"><%= @game.price_per_day %>€</p>
+            <% if user_signed_in? %>
+                <p class="btn btn-success" style="border-radius: 24px;"><%= link_to "Réserver ce jeu", new_game_booking_path(@game) %></p>
+                <p class="btn btn-link" style="border-radius: 24px;"><%= link_to "Actualiser ce jeu", edit_game_path(@game) %></p>
+                <p class="btn btn-danger" style="border-radius: 24px;"><%= link_to "Supprimer ce jeu", game_path(@game), data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr(e)?"} %></p>
+            <% end %>
+          </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+
+<p class="btn btn-primary" style="border-radius: 24px;"><%= link_to "Retourner sur la liste de tous les jeux", games_path %></p>

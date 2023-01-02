@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "owl.jpg" %>
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <p class="fs-3 btn btn-info" style="border-radius: 24px;"><%= "Home" %></p>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,7 +10,6 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-      <%= link_to "Home", games_path, class: "nav-link" %>
         <% if user_signed_in? %>
           <li class="nav-item active">
             <p class= "nav-link">Bonjour, vous êtes connecté !</p>

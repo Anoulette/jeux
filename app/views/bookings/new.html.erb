@@ -1,9 +1,8 @@
-<h2>Quelle date voulez-vous réserver pour ce jeu "<%= @game.title %>" ?</h2>
-
-<ul>
-  <%= form_with model: [@game, @booking] do |form| %>
-    <li><%= form.label :date %></li>
-    <li><%= form.text_field :date %></li>
-    <li><%= form.submit %></li>
-  <% end %>
-</ul>
+<div class="mt-5">Quelle date voulez-vous réserver le jeu "<%= @game.title %>" ?</div>
+  <div class="mt-4">
+    <%= simple_form_for [@game, @booking], data: { controller: "flatpickr", flatpickr_dates_value: @dates_booked } do |f| %>
+      <%= f.input :date, as: :string, input_html: { data: { flatpickr_target: "date" } } %>
+      <%= f.input :date, as: :string, input_html: { data: { flatpickr_target: "date" } } %>
+      <%= f.button :submit, "Réserver", class: "btn btn-primary", style: "border-radius: 24px;"%>
+    <% end %>
+</div>

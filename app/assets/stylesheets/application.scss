@@ -6,16 +6,23 @@
 // External libraries
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
+@import "flatpickr/dist/flatpickr.css";
+@import "flatpickr/dist/themes/airbnb";
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
 
-ul {
-  list-style-type: none;
-}
-
 // pour supprimer les lignes sous les liens link_to
 a {
   text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: grey;
+}
+
+ul {
+  list-style-type: none;
 }
